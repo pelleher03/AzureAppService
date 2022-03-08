@@ -25,6 +25,10 @@ def api_test():
        print('Request for api test recived')
        data = {'data1':1, 'data2':2, 'data3':3}
        return jsonify(data)
+
+@app.route('/pelle')
+def pelle():
+       print('Hallo, Pelle velkommen!!')
        
 
 if __name__ == '__main__':
