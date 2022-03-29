@@ -6,7 +6,8 @@ app = Flask(__name__)
 @app.route('/')
 def index():
    print('Request for index page received')
-   return render_template('index.html')
+   ip = request.host
+   return render_template('index.html', **locals())
 
 
 @app.route('/hello', methods=['POST'])
@@ -28,8 +29,10 @@ def api_test():
 
 @app.route('/pelle')
 def pelle():
-       print('Hallo, Pelle velkommen!!')
+       return('Hallo, Pelle velkommen!!')
        
 
 if __name__ == '__main__':
-   app.run()
+       app.run()
+
+   
